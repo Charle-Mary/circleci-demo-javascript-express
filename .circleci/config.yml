@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: echo "Hello world" > output.txt
     persist_to_workspace:
-      root: ~/
+      root: /tmp/dir/
       paths: output.txt
 
   print_the_output_file:
@@ -33,7 +33,7 @@ jobs:
     steps:
       - run: cat output.txt
     attach_to_workspace:
-      at: ~/
+      at: /tmp/dir/
     
 
 # Invoke jobs via workflows
