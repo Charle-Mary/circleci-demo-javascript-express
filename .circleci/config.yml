@@ -20,20 +20,20 @@ jobs:
   
   save_hello_world_output:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
       - run: echo "Hello world" > output.txt
       -  persist_to_workspace:
-          root: /home/circleci
+          root: /tmp/dir
           paths: output.txt
 
   print_output_file:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
       - run: cat output.txt
       - attach_workspace:
-          at: /home/circleci
+          at: /tmp/dir
     
 
 # Invoke jobs via workflows
