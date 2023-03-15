@@ -24,7 +24,7 @@ jobs:
     steps:
       - run: echo "Hello world" > output.txt
     persist_to_workspace:
-      root: /tmp/dir/
+      root: ~/
       paths: output.txt
 
   print_the_output_file:
@@ -32,8 +32,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - run: cat output.txt
-    attach_to_workspace:
-      at: /tmp/dir/
+    attach_workspace:
+      at: ~/
     
 
 # Invoke jobs via workflows
