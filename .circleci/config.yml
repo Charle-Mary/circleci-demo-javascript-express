@@ -34,7 +34,7 @@ jobs:
           at: ~/
       - run: cat ~/output.txtx
       - run: 
-          command: echo Pipeline with ID ${pipeline.id} has failed
+          command: echo Pipeline with ID <<pipeline.id>> has failed
           when: on_fail
       
     
