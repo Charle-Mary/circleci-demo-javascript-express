@@ -32,8 +32,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - run: cat ~/output.txt
-      - run: return 1
+      - run: cat ~/output.txtx
   
   send_alert:
     docker:
