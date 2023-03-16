@@ -39,7 +39,8 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo Pipeline with ID <<pipeline.id>> has failed
+      - run:
+          command: echo Pipeline with ID <<pipeline.id>> has failed
           when: on_fail
     
 workflows:
