@@ -40,7 +40,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: echo Pipeline with ID <<pipeline.id>> has failed
-      - when: on_fail
+          when: on_fail
     
 workflows:
   say-hello-workflow:
