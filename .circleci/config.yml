@@ -50,4 +50,5 @@ workflows:
           requires: [say-hello]
       - print_output_file:
           requires: [save_hello_world_output]
-      - send_alert
+      - send_alert: 
+          requires: [print_output_file]
